@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
@@ -6,10 +6,13 @@ firebase.initializeApp({
   apiKey: "AIzaSyC2xQEtycC3dGsUuIz6gaTNW1j6hn335HA",
   authDomain: "prima-b940d.firebaseapp.com"
 })
-console.log('initializing firebase here')
 
 export class LandingPage extends Component {
-  state = { isSignedIn: false }
+  state = {
+    isSignedIn: false,
+    UID: undefined,
+    username: ''
+  }
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -22,21 +25,31 @@ export class LandingPage extends Component {
 
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user })
-      console.log('component did mount updating isSignedIn state here')
-      console.log("user", user)
+      if (!!user) {
+        this.setState({
+          isSignedIn: true,
+          UID: firebase.auth().currentUser.uid,
+          username: firebase.auth().currentUser.displayName
+        })
+      } else {
+        this.setState({
+          isSignedIn: false,
+          UID: undefined,
+          username: ''
+        })
+      }
+      
     })
   }
 
   render() {
-    console.log('trying to render here')
     return (
       <div>
         {this.state.isSignedIn ? (
           <span>
             <div>Signed In!</div>
             <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+            <h1>Welcome {this.state.username}</h1>
           </span>
         ) : (
           <StyledFirebaseAuth
