@@ -1,4 +1,4 @@
 [build]
   command = "npm run build"
-  publish="prima/build"
-  base = "prima"
+  publish="prima/build/"
+  base = "prima/"
