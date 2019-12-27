@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {addToDo} from '../store/actions'
 import { Button } from 'react-bootstrap';
+import './style.css'
 
 class AddItem extends Component {
 
@@ -39,14 +40,12 @@ class AddItem extends Component {
     const {title, urgency, importance} = this.state;
       return (
         <div>
-          <form>
-            <div>
-              <input value={title} onChange={this.titleChange} type="text"/>
-              <input name="Urgency" type="checkbox" checked={this.state.urgency} onChange={this.urgencyChange} /> Urgent
-              <input name="Importance" type="checkbox" checked={this.state.importance} onChange={this.importanceChange} /> Important
-              <br />
-              <br />
-              <Button variant="primary" text = "SUBMIT" onClick={this.formSubmit}>SUBMIT</Button>
+          <form >
+            <div className='AddItemForm'>
+              <input value={title} onChange={this.titleChange} className='TitleInput' type="text"/>
+              <input name="Urgency" type="checkbox" checked={this.state.urgency} onChange={this.urgencyChange} className='UrgentInput'/> Urgent
+              <input name="Importance" type="checkbox" checked={this.state.importance} onChange={this.importanceChange} className='ImportantInput'/> Important
+              <Button variant="primary" text = "SUBMIT" onClick={this.formSubmit} className='SubmitButton'>SUBMIT</Button>
             </div>
           </form>
         </div>
