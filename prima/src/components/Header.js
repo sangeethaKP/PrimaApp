@@ -7,7 +7,7 @@ class Header extends Component {
     return (
       <div>
         PRIMA
-        <button >Clear All Items </button>
+        <button onClick={() => firebase.database().ref().child('todos').set(null)}>Clear All Items </button>
         <button onClick={() => firebase.auth().signOut()} >Logout </button>
       </div>
     )
