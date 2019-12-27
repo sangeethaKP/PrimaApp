@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import _ from 'lodash'
 import {fetchToDos, addToDo} from '../store/actions'
 import ListItem from './ListItem'
-import AddItem from './AddItem'
 
 class List extends Component {
   renderToDo () {
@@ -25,7 +24,6 @@ class List extends Component {
     return (
       <div>
         <div>
-          <AddItem />
           {this.renderToDo()}
         </div>
       </div>

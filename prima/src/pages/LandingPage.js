@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import SignIn from '../components/SignIn';
 import firebase from 'firebase'
-import List from '../components/List';
+import Home from '../components/Home';
 
 export class LandingPage extends Component {
   state = {
-    isSignedIn: false
+    isSignedIn: firebase.auth().isSignedIn ? true : false
   }
 
   componentDidMount = () => {
@@ -25,7 +25,7 @@ export class LandingPage extends Component {
 
   render() {
     return (
-      <div> {this.state.isSignedIn ? <List /> : <SignIn/>} </div>
+      <div> {this.state.isSignedIn ? <Home /> : <SignIn/>} </div>
     )
   }
 }
