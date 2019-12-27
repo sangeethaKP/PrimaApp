@@ -12,7 +12,7 @@ class List extends Component {
       return toDos
     }
     return (
-      <div><h4>You have no things to do in this category!</h4></div>
+      <div><h4>You have nothing to do in this category! 🎉</h4></div>
     )
   }
   render () {

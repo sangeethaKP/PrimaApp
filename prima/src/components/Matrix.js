@@ -18,19 +18,14 @@ class Matrix extends Component {
 
     _.map(data, (value, key) => {
       if (value.urgent === 1 && value.important === 1) {
-        console.log(` going in one ${value.title}`)
         one[key] = value
       } else if (value.urgent === 0 && value.important === 1) {
-        console.log(` going in two ${value.title}`)
         two[key] = value
       } else if (value.urgent === 1 && value.important === 0) {
-        console.log(` going in three ${value.title}`)
         three[key] = value
       } else {
-        console.log(` going in four ${value.title}`)
         four[key] = value
       }
-      console.log(`iterating over ${value.title} ${value.urgent} ${value.important}`)
     })
     return (
       <div>

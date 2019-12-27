@@ -9,6 +9,10 @@ export const completeToDo = completeToDo => async dispatch => {
   todosRef.child(completeToDo).remove()
 }
 
+export const editItem = (todoItem, todoId) => async dispatch => {
+  todosRef.child(todoId).set(todoItem)
+}
+
 export const fetchToDos = () => async dispatch => {
   todosRef.on('value', snapshot => {
     dispatch({

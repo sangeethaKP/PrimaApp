@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {addToDo} from '../store/actions'
+import { Button } from 'react-bootstrap';
 
 class AddItem extends Component {
 
@@ -45,7 +46,7 @@ class AddItem extends Component {
               <input name="Importance" type="checkbox" checked={this.state.importance} onChange={this.importanceChange} /> Important
               <br />
               <br />
-              <button text = "SUBMIT" onClick={this.formSubmit} > SUBMIT </button>
+              <Button variant="primary" text = "SUBMIT" onClick={this.formSubmit}>SUBMIT</Button>
             </div>
           </form>
         </div>
