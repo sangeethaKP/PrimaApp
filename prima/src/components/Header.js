@@ -9,8 +9,8 @@ class Header extends Component {
     return (
       <div className='HeaderCotainer'>
         <h2>PriMa</h2>
-        <Button className='ClearAllItemsButton' variant='outline-primary' text='SUBMIT' onClick={() => firebase.database().ref().child('todos').set(null)}>Clear All</Button>
-        <Button className='LogOutButton' variant='outline-primary' text='SUBMIT' onClick={() => firebase.auth().signOut()}>Log out</Button>
+        <Button className='ClearAllItemsButton' variant='outline-danger' text='SUBMIT' onClick={() => firebase.database().ref().child('todos').set(null)}>Clear All</Button>
+        <Button className='LogOutButton' variant='outline-danger' text='SUBMIT' onClick={() => firebase.auth().signOut()}>Log out</Button>
       </div>
     )
   }

@@ -1,20 +1,27 @@
 .HeaderCotainer {
   font-size: 15px;
   text-align: center;
-  background-color: aquamarine;
+  background-color:white;
   display: flex;
   flex-direction: row;
   padding: 10px;
+  color:#C82333;
+  border-bottom: 2px;
+  border: 1px solid;
+  border-bottom-color: #C82333;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
 }
 
 .AppName {
     font-size: 15px;
     text-align: center;
-    background-color:blue;
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
     padding: 10px;
+    color:#C82333;
 }
 
 .LogOutButton {
@@ -28,12 +35,12 @@
 }
 
 .AddItemForm {
-    background-color:aquamarine;
+    margin-top: 10px;
     display: flex;
     padding: 10px;
-    border: 4px dotted blue;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .TitleInput {
@@ -52,6 +59,54 @@
 }
 
 .SubmitButton {
-    margin-left: auto;
+    margin-left: 10px;
     margin-right: 10px;
+}
+
+.InputLabel {
+    margin-top: 5px;
+}
+
+.MatrixRowOne {
+
+}
+
+.MatrixRowTwo {
+    
+}
+
+.QuadrantOne {
+
+}
+
+.QuadrantTwo {
+    
+}
+
+.QuadrantThree {
+    
+}
+
+.QuadrantFour {
+    
+}
+
+.Quadrant {
+
+}
+
+.QuadranHeader {
+
+}
+
+.QuadrantItem {
+
+}
+
+.EditButton {
+
+}
+
+.DoneButton {
+    
 }

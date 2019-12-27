@@ -7,7 +7,7 @@ import './style.css'
 class AddItem extends Component {
 
   state = {
-    title: "",
+    title: "Enter a todo",
     importance: false,
     urgency: false
   };
@@ -42,10 +42,10 @@ class AddItem extends Component {
         <div>
           <form >
             <div className='AddItemForm'>
-              <input value={title} onChange={this.titleChange} className='TitleInput' type="text"/>
-              <input name="Urgency" type="checkbox" checked={this.state.urgency} onChange={this.urgencyChange} className='UrgentInput'/> Urgent
-              <input name="Importance" type="checkbox" checked={this.state.importance} onChange={this.importanceChange} className='ImportantInput'/> Important
-              <Button variant="primary" text = "SUBMIT" onClick={this.formSubmit} className='SubmitButton'>SUBMIT</Button>
+              <input placeholder={title} onChange={this.titleChange} className='TitleInput' type="text"/>
+              <input name="Urgency" type="checkbox" checked={this.state.urgency} onChange={this.urgencyChange} className='UrgentInput'/> <label className='InputLabel'>Urgent</label>
+              <input name="Importance" type="checkbox" checked={this.state.importance} onChange={this.importanceChange} className='ImportantInput'/> <label className='InputLabel'>Important</label>
+              <Button variant="danger" text = "SUBMIT" onClick={this.formSubmit} className='SubmitButton'>Add new todo</Button>
             </div>
           </form>
         </div>
