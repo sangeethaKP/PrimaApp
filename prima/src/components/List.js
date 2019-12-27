@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import _ from 'lodash'
-import {fetchToDos, addToDo} from '../store/actions'
 import ListItem from './ListItem'
 
 class List extends Component {
@@ -14,11 +12,8 @@ class List extends Component {
       return toDos
     }
     return (
-      <div><h4>You have no more things ToDo!</h4></div>
+      <div><h4>You have no things to do in this category!</h4></div>
     )
-  }
-  componentWillMount () {
-    this.props.listItems()
   }
   render () {
     return (
@@ -31,21 +26,4 @@ class List extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addItem: (todo) => {
-      dispatch(addToDo(todo))
-    },
-    listItems: () => {
-      dispatch(fetchToDos())
-    }
-  }
-}
-
-const mapStateToProps = ({data}) => {
-  return {
-    data: data.todos
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(List)
+export default List

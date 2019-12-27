@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import List from './List'
 import AddItem from './AddItem'
 import Header from './Header'
+import Matrix from './Matrix'
 
 class Home extends Component {
   componentWillMount () {
@@ -13,7 +13,7 @@ class Home extends Component {
       <div>
         <Header />
         <AddItem />
-        <List />
+        <Matrix />
       </div>
     )
   }
