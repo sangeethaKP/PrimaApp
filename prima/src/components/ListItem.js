@@ -12,7 +12,7 @@ class ListItem extends Component {
     return (
     todo ? 
       <div>
-        <h4> {todo.title} <span onClick={() => this.completeClick()}><u>Done</u></span></h4>
+        <h4> {todo.title} {todo.urgent} {todo.important} <span onClick={() => this.completeClick()}><u>Done</u></span></h4>
       </div>
       : 
       <div>Empty now</div>
